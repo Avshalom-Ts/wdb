@@ -2,9 +2,15 @@ const express = require("express");
 
 app = express();
 
+
+const todoRoutes = require('./routes/todos');
+
+
 app.get('/', function(req,res){
-  res.json({ message: 'HI FROM JS OBJECT!' });
+  res.send("<h1>Hello from the root route</h1>");
 })
+
+app.use('/api/todos', todoRoutes);
 
 const port = 8080
 
